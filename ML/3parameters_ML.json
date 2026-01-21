@@ -1,0 +1,67 @@
+{
+    "project_path": "path/to/your/project/",
+    "column_target_1": 2,
+    "column_target_2": 3,
+    "feature_column_start": 4,
+    "_comment": "if descriptor_input_list or model_list left empty, lists will populate automatically according to csv files in descriptors folder and model keys in this file",
+    "_comment": "models available: adaboost, gbrt, knn, lgbm, mlpregressor, rf, svr_gaussian, svr_linear, xgb",
+    "descriptor_input_list": [], 
+    "model_list": ["lgbm", "rf", "gbrt", "svr_gaussian", "xgb"],
+    "target_list": ["electron", "hole"],
+    
+    "fixed_parameters": {
+        "xgb": {"objective": "reg:squarederror"},
+        "lgbm": {"verbosity": -1, "force_col_wise": true},
+        "svr_gaussian": {"kernel": "rbf"},
+        "svr_linear": {"dual": "auto"}
+    },
+
+    "_comment": "cannot add other hyperparameters to test, only edit ranges",
+    "hyperparameters": {
+        "adaboost": {
+            "n_estimators": [50, 500],
+            "learning_rate": [0.001, 1.0]
+        },
+        "gbrt": {
+            "n_estimators": [50, 500],
+            "max_depth": [3, 10],
+            "learning_rate": [0.001, 0.3]
+        },
+        "knn": {
+            "n_neighbors": [1, 50],
+            "weights": ["uniform", "distance"]
+        },
+        "lgbm": {
+            "num_leaves": [16, 512],
+            "max_depth": [3, 15],
+            "learning_rate": [0.005, 0.2]
+        },
+        "mlpregressor": {
+            "solver": ["adam", "lbfgs"],
+            "max_iter": [500, 2000],
+            "hidden_layer_sizes": [50, 500],
+            "activation": ["relu", "tanh"],
+            "alpha": [1e-6, 1e-1],
+            "learning_rate_init": [1e-4, 1e-1],
+            "batch_size": [16, 32, 64, 128]
+        },
+        "rf": {
+            "n_estimators": [50, 500],
+            "max_depth": [1, 30]
+        },
+        "svr_gaussian": {
+            "C": [0.1, 100.0],
+            "gamma": [1e-4, 10.0]
+        },
+        "svr_linear": {
+            "C": [0.1, 1000.0]
+        },
+        "xgb": {
+            "gamma": [0, 5],
+            "max_depth": [3, 10],
+            "learning_rate": [0.005, 0.2],
+            "min_child_weight": [1, 10]
+        }
+
+    }
+}
