@@ -150,11 +150,11 @@ def main():
 #######################################
     #Define parameters here
     target = ["electron", "hole"] # ["hole", "electron"] or ["electron", "hole"] or ["electron"] or ["hole"]
-    desired_descriptors_list = ["manual", "daylight", "rdkit"] #choices: ["morgan", "daylight" , "maccs", "rdkit", "manual"]
+    desired_descriptors_list = ["morgan", "daylight" , "maccs", "rdkit", "manual"] #choices: ["morgan", "daylight" , "maccs", "rdkit", "manual"]
     desired_manual_descriptors_list = ["dou", "mw", "atom_count", "sp2c_count", "sp3c_count", "heteroatom_count", "bond_count", "h_bond_count", "rotatable_bond_count", "conjugated_bond_count", "cyclic_bond_count", "ring_count", "aromatic_ring_count"] #choices: ["dou", "mw", "atom_count", "sp2c_count", "sp3c_count", "heteroatom_count", "bond_count", "h_bond_count", "rotatable_bond_count", "conjugated_bond_count", "cyclic_bond_count", "ring_count", "aromatic_ring_count"]
 
     ID_column=2 #NOT 0 based
-    project_path="/users/xvb19157/Documents/test/"
+    project_path="/path/to/your/project/"
     smiles_path=f"{project_path}test.csv"
 
     smiles_column=ID_column + 1
