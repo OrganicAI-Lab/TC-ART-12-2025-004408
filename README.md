@@ -1,12 +1,15 @@
 # TC-ART-12-2025-004408
 TC-ART-12-2025-004408 Submission
+
+## Learning the Limits: How Data, Diversity, and Representation Control Machine-Learning Predictions of Reorganisation Energy
 This repository contains scripts for database generation using the Gaussian software for quantum calculations, generating different machine learning descriptors and testing different machine learning algorithms.
 
-Workflow overview
+## Workflow overview
 1. Run quantum_calculations/1input_files.py. This code will generate 
 	1) gaussian com files for all geometric files in a folder
 	2) an array slurm job submission file 
 	3) a configuration file for the array job
+	
 	Following this, the jobs will be automatically submitted.
 
 	The user needs to adjust 
@@ -20,6 +23,7 @@ Workflow overview
 	2) an array slurm job submission file for these error com files and the next energy com files for successful runs 
 	3) a configuration file for this error files array job and next energy array job
 	4) in case of the completed energy level being = 4, a reorganisation_energies.csv will be generated with all reorganisation energies calculated
+	
 	Following this, the jobs will be automatically submitted. This can be rerun until all calculations were successfully completed.
 
 	The user needs to adjust 
