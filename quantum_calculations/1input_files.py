@@ -80,10 +80,9 @@ def create_sh_file(project_path, molecule_list, cpus_per_task, partition, target
 
     #.sh file
         slurm_template = f"""#!/bin/bash
-# Propagate environment variables to the compute node
 #SBATCH --export=ALL
 #SBATCH --partition={partition}
-#SBATCH --account=nematiaram-esrd
+#SBATCH --account=your/account
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task={cpus_per_task}
 #SBATCH --time=48:00:00
